@@ -3,93 +3,162 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Racine Carrée</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Racine Carrée | Paysagiste à Monteux</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: url('fond.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-    header, footer {
-      background: rgba(76, 175, 80, 0.85);
-      color: white;
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background: #f9f9f9; color: #333; }
+    header {
+      background: url('fond.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 1em;
+      color: white;
+      padding: 2rem;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 { font-size: 3.5rem; margin: 0; letter-spacing: 1px; }
+    header p { font-size: 1.6rem; margin: 1rem 0 0.5rem; }
+    header span { font-size: 1.2rem; margin-bottom: 1.5rem; display: block; }
+    .cta-button {
+      background: #4caf50;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background: #43a047;
     }
     nav {
-      text-align: center;
-      background: rgba(56, 142, 60, 0.85);
-      padding: 0.5em;
+      background: white;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #2e7d32;
       text-decoration: none;
       font-weight: bold;
+      text-transform: uppercase;
     }
     section {
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.85);
-      margin: 20px;
-      border-radius: 10px;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 1rem;
+    }
+    .services ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+    .services li {
+      background: #e8f5e9;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid #66bb6a;
+      font-weight: 500;
+      border-radius: 6px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      justify-items: center;
     }
     .gallery img {
       width: 100%;
-      max-width: 600px;
-      margin: 10px auto;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
-    .button {
-      background: #4CAF50;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #2e7d32;
       color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 10px;
+      font-weight: 500;
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      header p { font-size: 1.2rem; }
+      .gallery { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Racine Carrée</h1>
-    <p>Entretien et aménagement de vos espaces verts - Vaucluse</p>
+    <p>Paysagiste à Monteux & ses alentours</p>
+    <span>Création, aménagement et entretien d'espaces verts sur-mesure</span>
+    <a class="cta-button" href="https://calendly.com/racine-carree2025" target="_blank">Prendre rendez-vous</a>
   </header>
+
   <nav>
     <a href="#services">Services</a>
-    <a href="#galerie">Avant / Après</a>
+    <a href="#avantapres">Avant / Après</a>
     <a href="#contact">Contact</a>
-    <a href="https://calendly.com/racine-carree2025" target="_blank">Rendez-vous</a>
   </nav>
-  <section id="services">
-    <h2>Nos services</h2>
+
+  <section id="services" class="services">
+    <h2>Nos Services</h2>
     <ul>
       <li>Élagage / Abattage</li>
       <li>Taille de haie / Débroussaillage</li>
       <li>Entretien de jardins</li>
-      <li>Aménagement paysager</li>
+      <li>Aménagement paysager sur mesure</li>
     </ul>
   </section>
-  <section id="galerie">
+
+  <section id="avantapres">
     <h2>Avant / Après</h2>
     <div class="gallery">
-      <img src="avant.jpg" alt="Photo avant intervention">
-      <img src="apres.jpg" alt="Photo après intervention">
+      <img src="avant.jpg" alt="Avant">
+      <img src="apres.jpg" alt="Après">
     </div>
   </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <p><strong>Téléphone :</strong> 06 76 86 71 44</p>
     <p><strong>Email :</strong> racine.carree2025@gmail.com</p>
-    <p><strong>Zone :</strong> Vaucluse et alentours</p>
+    <p><strong>Zone d'intervention :</strong> Monteux et tout le Vaucluse</p>
     <p><strong>Horaires :</strong> Lundi au Vendredi - 8h à 17h</p>
-    <a class="button" href="https://calendly.com/racine-carree2025" target="_blank">Prendre rendez-vous</a>
   </section>
+
   <footer>
-    © 2025 Racine Carrée
+    © 2025 Racine Carrée - Tous droits réservés
   </footer>
 </body>
 </html>
